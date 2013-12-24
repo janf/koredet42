@@ -1,10 +1,10 @@
 <title>MyHome</title>
-<h1>My home main screen</h1>
+<h1>My home main screen from Welcome</h1>
 <%= image_tag "home.jpg" %>
 <h2>Where am I</h2>
 <p>Find me in app/views/welcome/index.html.erb</p>
 <h2>More is coming soon</h2>
 <p>Look out</p>
-<%= print request.env["HTTP_X_FORWARDED_FOR"] %>
+
 
 
