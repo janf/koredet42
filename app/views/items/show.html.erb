@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Itemtype:</strong>
+  <%= @item.itemtype %>
+</p>
+
+<p>
+  <strong>Itemname:</strong>
+  <%= @item.itemname %>
+</p>
+
+<p>
+  <strong>Isunique:</strong>
+  <%= @item.isunique %>
+</p>
+
+<p>
+  <strong>Appxvalue:</strong>
+  <%= @item.appxvalue %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

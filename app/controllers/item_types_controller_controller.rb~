@@ -1,0 +1,4 @@
+class ItemTypesControllerController < ApplicationController
+  def index
+  end
+end

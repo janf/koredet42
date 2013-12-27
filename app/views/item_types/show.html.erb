@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Itemclass:</strong>
+  <%= @item_type.itemclass %>
+</p>
+
+<p>
+  <strong>Itemtype:</strong>
+  <%= @item_type.itemtype %>
+</p>
+
+<%= link_to 'Edit', edit_item_type_path(@item_type) %> |
+<%= link_to 'Back', item_types_path %>

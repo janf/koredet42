@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  itemtype: 1
+  itemname: MyString
+  isunique: false
+  appxvalue: 9.99
+
+two:
+  itemtype: 1
+  itemname: MyString
+  isunique: false
+  appxvalue: 9.99
