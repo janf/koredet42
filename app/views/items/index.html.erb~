@@ -18,7 +18,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.itemtype %></td>
-        <td><%= item.itemtype %></td>
+        <td><%= item.item_type.itemtype %></td>
         <td><%= item.itemname %></td>
         <td><%= item.isunique %></td>
         <td><%= item.appxvalue %></td>

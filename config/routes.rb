@@ -1,12 +1,17 @@
 Myhome::Application.routes.draw do
-  resources :items
 
-  resources :item_types
 
   devise_for :users
   resources :dashboard
   resources :item_types  
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :items
+
+  get 'command', to: 'command#index' 
+  post 'command', to: 'command#do_command'
+
+  #resources :commands, :collection=>{:test => :get, :do_test => :post}
+
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

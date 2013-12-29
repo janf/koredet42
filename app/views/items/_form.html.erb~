@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    # <%= f.label :itemtype %>
+    <%= f.label :itemtype %>
     <%= f.number_field :itemtype %>
   </div>
   <div class="field">
