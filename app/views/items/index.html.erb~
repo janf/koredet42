@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th> 
       <th>ItemType</th>
       <th>ItemTypeName</th>
       <th>Itemname</th>
@@ -17,8 +18,9 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td> 
         <td><%= item.itemtype %></td>
-        <td><%= item.item_type.itemtype %></td>
+        <td><%= item.item_types_id.item_type_name %></td>
         <td><%= item.itemname %></td>
         <td><%= item.isunique %></td>
         <td><%= item.appxvalue %></td>

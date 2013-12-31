@@ -1,10 +1,13 @@
 <h1>Command interface no1234</h1>
 
+<h2>
 <%= form_tag( command_path, :method=> 'post')  do %>
     <strong>Enter command: </strong>   
     <%=text_field_tag 'strCommand', '', autofocus: true %>
     <%= submit_tag 'Submit' %>
 
 <% end %>
+</h2>
 
-<h1><%=  @myvar %> </h1>
+<h2><%=  @myvar %> </h2>
+<h2><%=  @myvar2 %> </h2>

@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-
+<p>
+  <strong>Itemclass:</strong>
+  <%= @item_type.itemclass %>
+</p>
 
 <p>
-  <strong>ItemTypeNam:</strong>
-  <%= @item_type.item_type_name %>
+  <strong>Itemtype:</strong>
+  <%= @item_type.itemtypename %>
 </p>
 
 <%= link_to 'Edit', edit_item_type_path(@item_type) %> |

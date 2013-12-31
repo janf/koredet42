@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227130944) do
+ActiveRecord::Schema.define(version: 20131231095311) do
 
   create_table "item_types", force: true do |t|
-    t.string   "itemclass"
-    t.string   "itemtype"
+    t.string   "item_type_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 20131227130944) do
     t.decimal  "appxvalue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_types_id"
   end
 
   create_table "users", force: true do |t|

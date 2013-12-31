@@ -1,15 +1,18 @@
 class ItemsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
+    @item_type = ItemType.all
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @item_type = ItemType.find(:all)
   end
 
   # GET /items/new
@@ -19,6 +22,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item_type = ItemType.all
   end
 
   # POST /items

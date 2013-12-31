@@ -3,8 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Itemclass</th>
-      <th>Itemtype</th>
+      <th>ItemTypeName</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +13,7 @@
   <tbody>
     <% @item_types.each do |item_type| %>
       <tr>
-        <td><%= item_type.itemclass %></td>
-        <td><%= item_type.itemtype %></td>
+        <td><%= item_type.item_type_name %></td>
         <td><%= link_to 'Show', item_type %></td>
         <td><%= link_to 'Edit', edit_item_type_path(item_type) %></td>
         <td><%= link_to 'Destroy', item_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>

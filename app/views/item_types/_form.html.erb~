@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
-
   <div class="field">
-    <%= f.label :item_type_name %><br>
-    <%= f.text_field :item_type_name %>
+    <%= f.label :itemclass %><br>
+    <%= f.text_field :itemclass %>
+  </div>
+  <div class="field">
+    <%= f.label :itemtypename %><br>
+    <%= f.text_field :itemtypename %>
   </div>
   <div class="actions">
     <%= f.submit %>

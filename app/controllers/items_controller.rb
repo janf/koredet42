@@ -6,11 +6,13 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @item_type = ItemType.all
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @item_types = ItemType.find(:all)
   end
 
   # GET /items/new
@@ -20,6 +22,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item_types = ItemType.find(:all)
   end
 
   # POST /items

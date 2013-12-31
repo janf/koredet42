@@ -12,9 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :itemtype %>
-    <%= f.number_field :itemtype %>
-  </div>
+   <%= f.label  :itemtype %>
+   <%= f.collection_select :itemtype, ItemType.all,  :id, :itemtypename %>
+  </div> 
+
   <div class="field">
     <%= f.label :itemname %>
     <%= f.text_field :itemname %>

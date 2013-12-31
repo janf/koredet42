@@ -8,7 +8,10 @@ class CommandController < ApplicationController
   
    
   def foo_function
-   @myvar = "foo"
+   if @myvar.nil?
+     @myvar  = "foo"
+     @myvar2 = "foo2"
+   end
   end
 
   strLastCommand = String.new("...")
@@ -30,12 +33,12 @@ class CommandController < ApplicationController
   def do_command
     
     @strLastCommand = params[:strCommand]
+    @myvar2 = session[:lastcommand] 
     session[:lastcommand] = @strLastCommand
     @myvar = @strLastCommand
     # do whatever you want...
     #redirect_to :action => 'index'
     render "index"
   end
-
 
 end
