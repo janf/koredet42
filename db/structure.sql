@@ -1,0 +1,23 @@
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+CREATE TABLE "item_class" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_class_code" varchar(255), "item_class_name" varchar(255), "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "item_type" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_type_code" varchar(255) NOT NULL, "item_type_name" varchar(255) NOT NULL);
+CREATE TABLE "item" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_name" varchar(255), "has_individuals" boolean DEFAULT 'f', "barcode" varchar(255), "value" decimal, "weight" decimal, "lifespan_in_days" integer, "item_class_id" integer, "item_type_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE INDEX "index_item_on_item_class_id" ON "item" ("item_class_id");
+CREATE INDEX "index_item_on_item_type_id" ON "item" ("item_type_id");
+CREATE TABLE "location_class" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location_class_code" varchar(255), "location_class_name" varchar(255), "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "location_type" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location_type_code" varchar(255), "location_type_name" varchar(255), "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "location" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location_code" varchar(255) NOT NULL, "location_name" varchar(255) NOT NULL, "location_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE INDEX "index_location_on_location_id" ON "location" ("location_id");
+CREATE TABLE "inventory" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" decimal, "item_type_id" integer, "location_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE INDEX "index_inventory_on_item_type_id" ON "inventory" ("item_type_id");
+CREATE INDEX "index_inventory_on_location_id" ON "inventory" ("location_id");
+CREATE TABLE "individual_item" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "unique_system_number" integer NOT NULL, "serial_number" integer, "name" varchar(255), "value" decimal, "weight" decimal, "lifespan_in_days" integer, "item_type_id" integer, "location_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE INDEX "index_individual_item_on_item_type_id" ON "individual_item" ("item_type_id");
+CREATE INDEX "index_individual_item_on_location_id" ON "individual_item" ("location_id");
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime);
+CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
+CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token");
+INSERT INTO schema_migrations (version) VALUES ('20131224112649');
+
+INSERT INTO schema_migrations (version) VALUES ('201402101805');

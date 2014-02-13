@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Itemclass:</strong>
-  <%= @item_type.itemclass %>
-</p>
+<td>Field 
+<p> Item Type ID  :     <%= @item_type.id %></p>
+<p> Item Type Code:     <%= @item_type.item_type_code %></p>
+<p> Item Type Name:     <%= @item_type.item_type_name %></p>
+<p> Item Type Value:    <%= @item_type.value %></p>  
+<p> Item type Weigth:   <%= @item_type.weight %></p>
+<p> Item Type Lifespan: <%= @item_type.lifespan_in_days %></p>  
+<p> Item Type Name:     <%= @item_type.item_class.item_class_code %></p>
+<p> Item Type Name:     <%= @item_type.item_class.item_class_name %></p>
+<p> Created at    :     <%= @item_type.created_at %></p>
+<p> Updated at    :     <%= @item_type.updated_at %></p>
 
-<p>
-  <strong>Itemtype:</strong>
-  <%= @item_type.itemtypename %>
-</p>
 
 <%= link_to 'Edit', edit_item_type_path(@item_type) %> |
 <%= link_to 'Back', item_types_path %>

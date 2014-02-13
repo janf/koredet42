@@ -1,3 +1,5 @@
 class ItemType < ActiveRecord::Base
-  has_many :items
+   self.table_name = "item_type"
+
+   belongs_to :item_class 
 end

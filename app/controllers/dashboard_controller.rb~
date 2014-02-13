@@ -1,3 +1,8 @@
 class DashboardController < ApplicationController
   before_filter :authenticate_user!
+
+  def index
+     @item_class_count = ItemClass.count
+  end
+
 end

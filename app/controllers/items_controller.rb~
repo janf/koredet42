@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item_type = ItemType.find(:all)
+    @item_types = ItemType.find(:all)
   end
 
   # GET /items/new
@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item_type = ItemType.all
+    @item_types = ItemType.find(:all)
   end
 
   # POST /items

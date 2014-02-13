@@ -3,19 +3,18 @@
 <table>
   <thead>
     <tr>
-      <th>Itemclass</th>
-      <th>Itemtypename</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Name</th>
+     </tr>
   </thead>
 
   <tbody>
     <% @item_types.each do |item_type| %>
       <tr>
-        <td><%= item_type.itemclass %></td>
-        <td><%= item_type.itemtypename %></td>
+        <td><%= item_type.id %></td>   
+        <td><%= item_type.item_type_code %></td>   
+        <td><%= item_type.item_type_name %></td>  
         <td><%= link_to 'Show', item_type %></td>
         <td><%= link_to 'Edit', edit_item_type_path(item_type) %></td>
         <td><%= link_to 'Destroy', item_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>

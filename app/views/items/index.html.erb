@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>ID</th> 
-      <th>ItemType</th>
       <th>ItemTypeName</th>
       <th>Itemname</th>
       <th>Isunique</th>
@@ -19,8 +18,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td> 
-        <td><%= item.itemtype %></td>
-        <td><%= item.item_types_id %></td>
+        <td><%= item.item_types %></td>
         <td><%= item.itemname %></td>
         <td><%= item.isunique %></td>
         <td><%= item.appxvalue %></td>

@@ -28,6 +28,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#use simple_form for GUI
+
+gem 'simple_form'
 
 # Use devise for security 
 gem 'devise'

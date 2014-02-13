@@ -1,22 +1,12 @@
-<%= form_for(@item_type) do |f| %>
-  <% if @item_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item_type.errors.count, "error") %> prohibited this item_type from being saved:</h2>
+<%= simple_form_for(@item_type) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @item_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div class="field">
-    <%= f.label :item_type_name %><br>
-    <%= f.text_field :item_type_name %>
+  <div class="form-inputs">
+     <%= f.input :item_type_code %>   
+     <%= f.input :item_type_name %>   
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

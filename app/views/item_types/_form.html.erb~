@@ -1,25 +1,17 @@
-<%= form_for(@item_type) do |f| %>
-  <% if @item_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item_type.errors.count, "error") %> prohibited this item_type from being saved:</h2>
+<%= simple_form_for(@item_type) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @item_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+     <%= f.association :item_class, label_method: :item_class_name, value_method: :id %>   
+     <%= f.input :item_type_code %>   
+     <%= f.input :item_type_name %>   
+     <%= f.input :has_individuals, as: :boolean %>   
+     <%= f.input :value %>
+     <%= f.input :weight %>
+     <%= f.input :lifespan_in_days %>
+  </div>
 
-  <div class="field">
-    <%= f.label :itemclass %><br>
-    <%= f.text_field :itemclass %>
-  </div>
-  <div class="field">
-    <%= f.label :itemtypename %><br>
-    <%= f.text_field :itemtypename %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

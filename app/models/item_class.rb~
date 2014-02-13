@@ -1,0 +1,9 @@
+class ItemClass < ActiveRecord::Base
+   self.table_name = "item_class"
+
+   has_many  :item_types
+   accepts_nested_attributes_for :item_types
+   
+  
+
+end

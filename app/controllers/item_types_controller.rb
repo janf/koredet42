@@ -69,6 +69,7 @@ class ItemTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_type_params
-      params.require(:item_type).permit(:item_type_name)
+      params.require(:item_type).permit(:item_type_code, :item_type_name, :has_individuals, :item_class_id, :value, :weight, :lifespan_in_days)
+      #,  item_class_attributes[:id, :item_class_code, :item_class_name] ) 
     end
 end
