@@ -4,12 +4,16 @@
   <thead>
     <tr>
       <th>ID</th> 
-      <th>ItemTypeName</th>
-      <th>Itemname</th>
-      <th>Isunique</th>
-      <th>Appxvalue</th>
-      <th></th>
-      <th></th>
+      <th>Item Class</th> 
+      <th>Item Type</th>
+      <th>Item name</th>
+      <th>Has individuals?</th>
+      <th>Barcode</th>
+      <th>Value</th>
+      <th>Weight</th>
+      <th>Lifespan (d)</th>
+      <th>Created</th>
+      <th>Updated</th>
       <th></th>
     </tr>
   </thead>
@@ -18,10 +22,13 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td> 
+        <td><%= item.item_class.item_class_name %></td>
         <td><%= item.item_type.item_type_name %></td>
-        <td><%= item.itemname %></td>
-        <td><%= item.isunique %></td>
-        <td><%= item.appxvalue %></td>
+        <td><%= item.item_name %></td>
+        <td><%= item.has_individuals %></td>
+        <td><%= item.barcode %></td>
+        <td><%= item.value %></td>
+        <td><%= item.weight %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

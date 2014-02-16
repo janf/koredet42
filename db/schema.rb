@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.decimal  "value"
     t.decimal  "weight"
     t.integer  "lifespan_in_days"
-    t.integer  "item_type_id"
+    t.integer  "item_id"
     t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "individual_item", ["item_type_id"], name: "index_individual_item_on_item_type_id"
+  add_index "individual_item", ["item_id"], name: "index_individual_item_on_item_id"
   add_index "individual_item", ["location_id"], name: "index_individual_item_on_location_id"
 
   create_table "inventory", force: true do |t|
@@ -71,8 +71,10 @@ ActiveRecord::Schema.define(version: 20131224112649) do
   end
 
   create_table "location", force: true do |t|
-    t.string   "location_code", null: false
-    t.string   "location_name", null: false
+    t.string   "location_code",     null: false
+    t.string   "location_name",     null: false
+    t.integer  "location_class_id", null: false
+    t.integer  "location_type_id"
     t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"

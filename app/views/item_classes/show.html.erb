@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<td>Field 
+<p> Item Class ID  :     <%= @item_class.id %></p>
+<p> Item Class Code:     <%= @item_class.item_class_code %></p>
+<p> Item Class Name:     <%= @item_class.item_class_name %></p>
+<p> Created at    :      <%= @item_class.created_at %></p>
+<p> Updated at    :      <%= @item_class.updated_at %></p>
+
+
+<%= link_to 'Edit', edit_item_class_path(@item_class) %> |
+<%= link_to 'Back', item_class_path %>

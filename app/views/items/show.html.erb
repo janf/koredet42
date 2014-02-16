@@ -1,29 +1,50 @@
+<h1>Show Item</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Itemtype:</strong>
-  <%= @item.itemtype %>
+  <strong>Item class:</strong>
+  <%= @item.item_class.item_class_name %>
+</p>
+
+
+<p>
+  <strong>Item type:</strong>
+  <%= @item.item_type.item_type_name %>
 </p>
 
 <p>
-  <strong>Itemtype Name:</strong>
-  <%= @item.itemtype %>
+  <strong>Item Name:</strong>
+  <%= @item.item_name %>
 </p>
 
 <p>
-  <strong>Itemname:</strong>
-  <%= @item.itemname %>
+  <strong>Has individuals:</strong>
+  <%= @item.has_individuals %>
 </p>
 
 <p>
-  <strong>Isunique:</strong>
-  <%= @item.isunique %>
+  <strong>Barcode:</strong>
+  <%= @item.barcode %>
 </p>
 
 <p>
-  <strong>Appxvalue:</strong>
-  <%= @item.appxvalue %>
+  <strong>Value:</strong>
+  <%= @item.value %>
 </p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @item.weight %>
+</p>
+
+<p>
+  <strong>Lifespan:</strong>
+  <%= @item.lifespan_in_days %>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

@@ -40,12 +40,12 @@ class CreateInitialDb < ActiveRecord::Migration
      create_table :location do |t|
         t.string :location_code, null: false
         t.string :location_name, null: false
+	t.references :location_class, null: false
+        t.references :location_type
         t.references :location, index: true
         t.timestamps
      end 
-   
-
-
+  
      create_table :inventory do |t|
         t.decimal :amount
         t.references :item_type, index: true
@@ -60,12 +60,10 @@ class CreateInitialDb < ActiveRecord::Migration
         t.decimal :value
         t.decimal :weight
         t.integer :lifespan_in_days
-        t.references :item_type, index: true
+        t.references :item, index: true
         t.references :location, index: true
         t.timestamps
      end
-
-
 
   end
 end

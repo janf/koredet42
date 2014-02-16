@@ -6,10 +6,10 @@ Myhome::Application.routes.draw do
   resources :item_types  
   resources :items
 
-  #get 'command', to: 'command#index' 
-  #post 'command', to: 'command#index'
+  get 'command', to: 'command#index' 
+  post 'command', to: 'command#do_command'
 
-  resources :commands, :collection=>{:test => :get, :do_test => :post}
+  #resources :commands, :collection=>{:test => :get, :do_test => :post}
 
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

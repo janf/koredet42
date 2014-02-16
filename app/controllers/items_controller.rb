@@ -12,7 +12,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    #@item_types = ItemType.find(:all)
+    @items = ItemType.find(:all)
+
   end
 
   # GET /items/new
@@ -73,6 +74,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:itemtype, :itemname, :isunique, :appxvalue)
+      params.require(:item).permit(:item_class_id, :item_type_id, :item_name, :has_individuals, :barcode, :weight, :value, :lifespan_in_days)
     end
 end

@@ -1,0 +1,12 @@
+<%= simple_form_for(@item_class) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+     <%= f.input :item_class_code %>   
+     <%= f.input :item_class_name %>   
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

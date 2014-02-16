@@ -1,34 +1,18 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= simple_form_for @item do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.association :item_class, label_method: :item_class_name, value_method: :id %> 
+    <%= f.association :item_type, label_method: :item_type_name, value_method: :id %>     
+    <%= f.input :item_name %>  
+    <%= f.input :has_individuals %>
+    <%= f.input :barcode %>
+    <%= f.input :value %>
+    <%= f.input :lifespan_in_days %>
+    <%= f.input :weight %>
+  </div>
 
-  <div class="field">
-   <%= f.label  :itemtype %>
-   <%= f.collection_select :itemtype, ItemType.all,  :id, :itemtypename %>
-  </div> 
-
-  <div class="field">
-    <%= f.label :itemname %>
-    <%= f.text_field :itemname %>
-  </div>
-  <div class="field">
-    <%= f.label :isunique %>
-    <%= f.check_box :isunique %>
-  </div>
-  <div class="field">
-    <%= f.label :appxvalue %>
-    <%= f.text_field :appxvalue %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

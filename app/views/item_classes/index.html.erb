@@ -1,0 +1,28 @@
+<h1>Item classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Name</th>
+     </tr>
+  </thead>
+
+  <tbody>
+    <% @item_classes.each do |item_class| %>
+      <tr>
+        <td><%= item_class.id %></td>   
+        <td><%= item_class.item_class_code %></td>   
+        <td><%= item_class.item_class_name %></td>  
+        <td><%= link_to 'Show', item_class %></td>
+        <td><%= link_to 'Edit', edit_item_class_path(item_class) %></td>
+        <td><%= link_to 'Destroy', item_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item Class', new_item_class_path %>
