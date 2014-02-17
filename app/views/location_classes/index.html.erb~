@@ -1,0 +1,33 @@
+<h1>Location classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Is physical?</th>
+      <th></th>
+      <th></th>
+      <th></th>
+     </tr>
+  </thead>
+
+  <tbody>
+    <% @location_classes.each do |location_class| %>
+      <tr>
+        <td><%= location_class.id %></td> 
+        <td><%= location_class.location_class_code %></td>
+        <td><%= location_class.location_class_name %></td>
+        <td><%= location_class.physical_location %></td>
+        <td><%= link_to 'Show', location_class %></td>
+        <td><%= link_to 'Edit', edit_location_class_path(location_class) %></td>
+        <td><%= link_to 'Destroy', location_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Location class', new_location_class_path %>

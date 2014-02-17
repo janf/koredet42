@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20131224112649) do
 
+  create_table "ind_item_history", force: true do |t|
+    t.integer  "individual_item_id"
+    t.string   "summary"
+    t.text     "description"
+    t.decimal  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ind_item_history", ["individual_item_id"], name: "index_ind_item_history_on_individual_item_id"
+
   create_table "individual_item", force: true do |t|
     t.integer  "unique_system_number", null: false
     t.integer  "serial_number"
@@ -83,8 +94,9 @@ ActiveRecord::Schema.define(version: 20131224112649) do
   add_index "location", ["location_id"], name: "index_location_on_location_id"
 
   create_table "location_class", force: true do |t|
-    t.string   "location_class_code", null: false
-    t.string   "location_class_name", null: false
+    t.string   "location_class_code",                null: false
+    t.string   "location_class_name",                null: false
+    t.boolean  "physical_location",   default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

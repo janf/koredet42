@@ -27,6 +27,6 @@
 #    item = Item.Create([{ }])  
 
   
-   location_classes = LocationClass.create( [ {location_class_code: 'FYS', location_class_name: 'Fysisk sted', physical_location: true},
+   location_classes = Location.create( [ {location_class_code: 'FYS', location_class_name: 'Fysisk sted', physical_location: true},
 					 {location_class_code: 'PER', location_class_name: 'Person', physical_location: true},
  					 {location_class_code: 'HLS', location_class_name: 'Handleliste', physical_location: false},                                  					 						 {location_class_code: 'FBR', location_class_name: 'Forbruk', physical_location: false} ])                                  

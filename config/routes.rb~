@@ -1,10 +1,13 @@
 Myhome::Application.routes.draw do
 
 
-  devise_for :users
-  resources :dashboard
-  resources :item_types  
   resources :items
+
+  devise_for :users
+  resources  :dashboard
+  resources  :item_types  
+  resources  :item_classes  
+  resources  :items
 
   get 'command', to: 'command#index' 
   post 'command', to: 'command#do_command'

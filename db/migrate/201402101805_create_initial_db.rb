@@ -28,6 +28,7 @@ class CreateInitialDb < ActiveRecord::Migration
      create_table :location_class do |t|
 	t.string :location_class_code, null: false
         t.string :location_class_name, null: false
+        t.boolean :physical_location, null: false, default: true
         t.timestamps   
      end 
 
@@ -64,6 +65,15 @@ class CreateInitialDb < ActiveRecord::Migration
         t.references :location, index: true
         t.timestamps
      end
+
+     create_table :ind_item_history do |t|
+        t.references :individual_item, index: true
+	t.string  :summary       
+	t.text    :description  
+        t.decimal :amount
+        t.timestamps
+     end
+
 
   end
 end
