@@ -41,14 +41,13 @@ ActiveRecord::Schema.define(version: 20131224112649) do
   add_index "individual_item", ["location_id"], name: "index_individual_item_on_location_id"
 
   create_table "inventory", force: true do |t|
-    t.decimal  "amount"
-    t.integer  "item_type_id"
+    t.decimal  "quantity"
     t.integer  "location_id"
+    t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "inventory", ["item_type_id"], name: "index_inventory_on_item_type_id"
   add_index "inventory", ["location_id"], name: "index_inventory_on_location_id"
 
   create_table "item", force: true do |t|

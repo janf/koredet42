@@ -35,6 +35,9 @@ gem 'simple_form'
 # Use devise for security 
 gem 'devise'
 
+#use acts_as_tree for hierarchy navigation
+gem 'acts_as_tree'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

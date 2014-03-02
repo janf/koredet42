@@ -14,30 +14,72 @@ class CommandController < ApplicationController
    end
   end
 
-  strLastCommand = String.new("...")
 
-  def index
-   #test = "DONALD"
-   #session[:lastcommand] = "Donald"
-   @myvar = "index"
-  end
+  def find_item
+  
+    @item = Item.find_by(barcode: @barcode)
 
-  def post
-    #session[:lastcommand] = params[:strCommand] 
-    @myvar = "post"
+    if @item.nil?
+      @item_name = "NOT FOUND"
+    else
+      @item_name = @item.item_name
+      session[:item_id] = @item.id
+    end
+
   end
   
-  #def show
-  #end
 
+  def do_numeric_barcode
+    find_item
+    session[:item_name] = @item_name  
+    flash[:barcode] = @barcode
+    session[:method] = "do_numeric_barcode"
+  end 
+
+  def do_transaction
+    #@barcode = session[:barcode]
+    #find_item
+ 
+    @inventory = Inventory.new
+    @location = Location.find_by(location_code: "BIB")
+    @inventory.location_id =  @location.id
+    @inventory.item_id = session[:item_id]
+    @inventory.quantity = 1
+    @inventory.save
+    
+
+    session[:method] = "do_transaction"
+  end
+
+  def index
+ 
+   @myvar = "index"
+   @item_name = session[:item_name]
+  
+  end
+
+ 
   def do_command
     
-    @strLastCommand = params[:strCommand]
-    @myvar2 = session[:lastcommand] 
-    session[:lastcommand] = @strLastCommand
-    @myvar = @strLastCommand
+    @sLastCommand = params[:strCommand]
+    #@myvar2 = session[:lastcommand] 
+    session[:lastcommand] = @sLastCommand
+    #@myvar = @strLastCommand
     # do whatever you want...
     #redirect_to :action => 'index'
+    
+    @sCommType = @sLastCommand.to_s[0,1]
+    
+    if "0123456789".include?(@sCommType)
+       @barcode  =     @sLastCommand
+       do_numeric_barcode
+       session[:barcode] = @sLastCommand
+    elsif "T".to_s ==  @sCommType.to_s
+       do_transaction
+    end
+     
+    @item_inventory = Inventory.where("item_id = ?",  session[:item_id])
+   
     render "index"
   end
 

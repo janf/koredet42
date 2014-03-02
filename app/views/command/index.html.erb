@@ -1,13 +1,34 @@
-<h1>Command interface no1234</h1>
+<h1>Command interface</h1>
 
 <h2>
 <%= form_tag( command_path, :method=> 'post')  do %>
     <strong>Enter command: </strong>   
-    <%=text_field_tag 'strCommand', '', autofocus: true %>
+    <%=text_field_tag 'strCommand', '', :autofocus => true %>
     <%= submit_tag 'Submit' %>
 
 <% end %>
 </h2>
 
+<%
+=begin
+%>
+This code is for testing purposes only
 <h2><%=  @myvar %> </h2>
 <h2><%=  @myvar2 %> </h2>
+
+<h2>sCommType:  <%=  @sCommType %> </h2>
+<h2>LastMethod:  <%=  session[:method] %> </h2>
+
+<%
+=end
+%>
+
+<% if not @item.nil? %>
+  <%= render "item_info" %> 
+  <%= render "item_inventory" %> 
+
+ <% else %>
+    <h2>Unknown item, Would you like to <%= link_to ' register it ?', new_item_path %>  </h2>
+<% end %>
+
+

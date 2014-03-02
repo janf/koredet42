@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_inventory.each do |inventory| %>
+      <tr>
+        <td><%= inventory.location.try(:location_name) %></td>
+        <td><%= inventory.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

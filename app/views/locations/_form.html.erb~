@@ -7,7 +7,7 @@
     <%= f.association :location_type, label_method: :location_type_name, value_method: :id %>     
     <%= f.input :location_code %>  
     <%= f.input :location_name %>
-    <%= f.association :parent, label_method: :location_name, value_method: :id  %> 
+    <%= f.association :parent_id, label_method: :location_name, value_method: :id  %> 
   </div>
 
   <div class="form-actions">

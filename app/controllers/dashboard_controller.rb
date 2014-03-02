@@ -8,6 +8,7 @@ class DashboardController < ApplicationController
      @location_type_count = LocationType.count
      @location_class_count = LocationClass.count
      @location_count = Location.count
+     @inventory_count = Inventory.count
   end
 
 end

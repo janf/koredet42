@@ -1,0 +1,14 @@
+<%= simple_form_for(@inventory) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :item, label_method: :item_name, value_method: :id %> 
+    <%= f.association :location, label_method: :location_name, value_method: :id %>     
+    <%= f.input :quantity %>  
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

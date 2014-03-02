@@ -5,6 +5,9 @@ class DashboardController < ApplicationController
      @item_type_count = ItemType.count
      @item_class_count = ItemClass.count
      @item_count = Item.count
+     @location_type_count = LocationType.count
+     @location_class_count = LocationClass.count
+     @location_count = Location.count
   end
 
 end

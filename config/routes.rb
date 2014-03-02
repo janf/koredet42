@@ -9,6 +9,8 @@ Myhome::Application.routes.draw do
   resources  :location_classes
   resources  :location_types
   resources  :locations
+  resources  :inventories
+
 
 
   get 'command', to: 'command#index' 
