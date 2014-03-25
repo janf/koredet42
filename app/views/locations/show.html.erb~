@@ -1,4 +1,56 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Id:</strong>
+  <%= @location.id %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @location.location_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.location_name %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @location.location_class.try(:location_class_name) %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @location.location_type.try(:location_type_name) %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @location.parent.location_name %>
+</p>
+
+<h2>Inventory at location</h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inventories.each do |inventory| %>
+    <tr>
+      <td><%= inventory.item.try(:item_name) %></td>
+      <td><%= inventory.quantity %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+   
+
+
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

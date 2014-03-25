@@ -77,7 +77,8 @@ class CommandController < ApplicationController
     elsif "T".to_s ==  @sCommType.to_s
        do_transaction
     end
-    
+     
+    @item_inventory = Inventory.where("item_id = ?",  session[:item_id])
    
     render "index"
   end

@@ -79,7 +79,7 @@ class CommandController < ApplicationController
     end
      
     @item_inventory = Inventory.where("item_id = ?",  session[:item_id])
-   
+    
     render "index"
   end
 

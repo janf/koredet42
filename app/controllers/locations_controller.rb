@@ -9,7 +9,9 @@ class LocationsController < ApplicationController
 
   # GET /locations/1
   # GET /locations/1.json
-  def show
+  def show 
+    @locations = Location.all
+    @inventories = Inventory.where("location_id=?", @location.id) 
   end
 
   # GET /locations/new

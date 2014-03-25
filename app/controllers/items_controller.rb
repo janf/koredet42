@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    #@item_type = ItemType.all
   end
 
   # GET /items/1
