@@ -1,7 +1,10 @@
 Myhome::Application.routes.draw do
 
 
-  devise_for :users
+  devise_for :users do
+     get '/users/sign_out' => 'devise/sessions#destroy'
+	 match '/users/sign_out' => 'devise/sessions#destroy'
+  end
   resources  :dashboard
   resources  :item_types  
   resources  :item_classes  
@@ -11,7 +14,8 @@ Myhome::Application.routes.draw do
   resources  :locations
   resources  :inventories
 
-
+  get '/users/sign_out' => 'devise/sessions#destroy'
+  match '/users/sign_out' => 'devise/sessions#destroy'
 
   get 'command', to: 'command#index' 
   post 'command', to: 'command#do_command'

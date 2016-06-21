@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
+# Use puma as server
+gem 'puma'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
@@ -35,7 +40,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #use simple_form for GUI
-
 gem 'simple_form'
 
 # Use devise for security 
