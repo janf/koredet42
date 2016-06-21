@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20131224112649) do
   create_table "inventory", force: true do |t|
     t.decimal  "quantity"
     t.integer  "location_id"
-    t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
   end
 
   add_index "inventory", ["location_id"], name: "index_inventory_on_location_id"
