@@ -11,8 +11,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @items = ItemType.find(:all)
-
   end
 
   # GET /items/new

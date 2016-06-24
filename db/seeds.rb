@@ -1,5 +1,9 @@
 User.create!([
-  {email: "janfredrik@havie.net", encrypted_password: "$2a$10$aAZR5jon.H2KGhTAPr7h5.ZX3AF7YZxVHWCc7KjvwbcaOXrC3XGO6", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2016-06-24 08:45:44", sign_in_count: 4, current_sign_in_at: "2016-06-24 08:45:44", last_sign_in_at: "2016-06-24 08:45:39", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+  {email: "janfredrik@havie.net", encrypted_password: "$2a$10$aAZR5jon.H2KGhTAPr7h5.ZX3AF7YZxVHWCc7KjvwbcaOXrC3XGO6", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2016-06-24 08:45:44", sign_in_count: 5, current_sign_in_at: "2016-06-24 09:46:41", last_sign_in_at: "2016-06-24 08:45:44", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+])
+Item.create!([
+  {item_name: "Kjøttdeig", has_individuals: true, barcode: "", value: "50.0", weight: "0.5", lifespan_in_days: 180, item_class_id: 5, item_type_id: 1},
+  {item_name: "Kjøttdeig", has_individuals: false, barcode: "", value: "50.0", weight: "0.5", lifespan_in_days: 180, item_class_id: 5, item_type_id: 1}
 ])
 ItemClass.create!([
   {item_class_code: "GJT", item_class_name: "Gjentakende tjeneste"},
