@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20131224112649) do
 
-  create_table "ind_item_history", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "ind_item_history", force: :cascade do |t|
     t.integer  "individual_item_id"
     t.string   "summary"
     t.text     "description"
@@ -22,9 +25,9 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  add_index "ind_item_history", ["individual_item_id"], name: "index_ind_item_history_on_individual_item_id"
+  add_index "ind_item_history", ["individual_item_id"], name: "index_ind_item_history_on_individual_item_id", using: :btree
 
-  create_table "individual_item", force: true do |t|
+  create_table "individual_item", force: :cascade do |t|
     t.integer  "unique_system_number", null: false
     t.integer  "serial_number"
     t.string   "name"
@@ -37,10 +40,10 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  add_index "individual_item", ["item_id"], name: "index_individual_item_on_item_id"
-  add_index "individual_item", ["location_id"], name: "index_individual_item_on_location_id"
+  add_index "individual_item", ["item_id"], name: "index_individual_item_on_item_id", using: :btree
+  add_index "individual_item", ["location_id"], name: "index_individual_item_on_location_id", using: :btree
 
-  create_table "inventory", force: true do |t|
+  create_table "inventory", force: :cascade do |t|
     t.decimal  "quantity"
     t.integer  "location_id"
     t.datetime "created_at"
@@ -48,9 +51,9 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.integer  "item_id"
   end
 
-  add_index "inventory", ["location_id"], name: "index_inventory_on_location_id"
+  add_index "inventory", ["location_id"], name: "index_inventory_on_location_id", using: :btree
 
-  create_table "item", force: true do |t|
+  create_table "item", force: :cascade do |t|
     t.string   "item_name",                        null: false
     t.boolean  "has_individuals",  default: false
     t.string   "barcode"
@@ -63,24 +66,26 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  add_index "item", ["item_class_id"], name: "index_item_on_item_class_id"
-  add_index "item", ["item_type_id"], name: "index_item_on_item_type_id"
+  add_index "item", ["item_class_id"], name: "index_item_on_item_class_id", using: :btree
+  add_index "item", ["item_type_id"], name: "index_item_on_item_type_id", using: :btree
 
-  create_table "item_class", force: true do |t|
+  create_table "item_class", force: :cascade do |t|
     t.string   "item_class_code", null: false
     t.string   "item_class_name", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "item_type", force: true do |t|
+  add_index "item_class", ["item_class_code"], name: "index_item_class_on_item_class_code", using: :btree
+
+  create_table "item_type", force: :cascade do |t|
     t.string   "item_type_code", null: false
     t.string   "item_type_name", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "location", force: true do |t|
+  create_table "location", force: :cascade do |t|
     t.string   "location_code",     null: false
     t.string   "location_name",     null: false
     t.integer  "location_class_id", null: false
@@ -90,9 +95,9 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  add_index "location", ["location_id"], name: "index_location_on_location_id"
+  add_index "location", ["location_id"], name: "index_location_on_location_id", using: :btree
 
-  create_table "location_class", force: true do |t|
+  create_table "location_class", force: :cascade do |t|
     t.string   "location_class_code",                null: false
     t.string   "location_class_name",                null: false
     t.boolean  "physical_location",   default: true, null: false
@@ -100,14 +105,14 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  create_table "location_type", force: true do |t|
+  create_table "location_type", force: :cascade do |t|
     t.string   "location_type_code", null: false
     t.string   "location_type_name", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -122,7 +127,7 @@ ActiveRecord::Schema.define(version: 20131224112649) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

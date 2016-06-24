@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.3.0'
 
 # Use puma as server
 gem 'puma'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.6'
 gem 'bootstrap-sass', '2.3.2.0'
 
 # Use sqlite3 as the database for Active Record
@@ -52,6 +52,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'seed_dump', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

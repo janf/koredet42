@@ -13,8 +13,8 @@
 development:
   adapter: postgresql
   database: db/development
-  username: postgres
-  password: Tossi99
+  username: janfredrik
+  password: havie
   host: localhost
   encoding: UTF8
   pool: 5
@@ -28,8 +28,8 @@ development:
 test:
   adapter: postgresql
   database: db/development
-  username: postgres
-  password: Tossi99
+  username: janfredrik
+  password: havie
   host: localhost
   encoding: UTF8
   pool: 5
@@ -38,8 +38,8 @@ test:
 production:
   adapter: postgresql
   database: db/development
-  username: postgres
-  password: Tossi99
+  username: janfredrik
+  password: havie
   host: localhost
   encoding: UTF8
   pool: 5
