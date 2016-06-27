@@ -27,7 +27,7 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= @location.parent.location_name.try(:location_name) %>
+  <%= @location.parent.location_name if @location.parent %>
 </p>
 
 
