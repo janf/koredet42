@@ -1,0 +1,101 @@
+2016-06-26T10:15:28.149462+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:38:in `call_app'
+2016-06-26T10:15:28.002880+00:00 app[web.1]:   Rendered layouts/_login_footer.html.erb (2.4ms)
+2016-06-26T10:15:27.999254+00:00 app[web.1]:   Rendered inventories/index.html.erb within layouts/application (2.8ms)
+2016-06-26T10:15:28.149462+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+2016-06-26T10:15:28.149460+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+2016-06-26T10:15:28.149463+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:20:in `block in call'
+2016-06-26T10:15:28.149464+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+2016-06-26T10:15:28.149466+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:20:in `call'
+2016-06-26T10:15:28.149469+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+2016-06-26T10:15:28.149469+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/static.rb:120:in `call'
+2016-06-26T10:15:28.149470+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+2016-06-26T10:15:28.149464+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:26:in `tagged'
+2016-06-26T10:15:28.149465+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:68:in `tagged'
+2016-06-26T10:15:28.149467+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+2016-06-26T10:15:28.149466+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+2016-06-26T10:15:28.149468+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+2016-06-26T10:15:28.149476+00:00 app[web.1]: 
+2016-06-26T10:15:28.149471+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:518:in `call'
+2016-06-26T10:15:28.149471+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:165:in `call'
+2016-06-26T10:15:28.149472+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/configuration.rb:224:in `call'
+2016-06-26T10:15:28.149473+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:569:in `handle_request'
+2016-06-26T10:15:28.149473+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:406:in `process_client'
+2016-06-26T10:15:28.149474+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:271:in `block in run'
+2016-06-26T10:15:28.149475+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+2016-06-26T10:15:28.149475+00:00 app[web.1]: 
+2016-06-26T10:15:28.150684+00:00 heroku[router]: at=info method=GET path="/javascripts/defaults.js" host=koredet.herokuapp.com request_id=70d88249-8ac6-4c81-8c45-b99e33b7a6a7 fwd="62.102.163.248" dyno=web.1 connect=0ms service=4ms status=404 bytes=1531
+2016-06-26T10:15:30.744413+00:00 heroku[router]: at=info method=GET path="/" host=koredet.herokuapp.com request_id=78604c8c-b91f-4066-a29f-cd7519996c1e fwd="62.102.163.248" dyno=web.1 connect=0ms service=17ms status=302 bytes=1169
+2016-06-26T10:15:30.732333+00:00 app[web.1]: Processing by HomeController#index as HTML
+2016-06-26T10:15:30.892551+00:00 app[web.1]:   Rendered layouts/_login_footer.html.erb (0.4ms)
+2016-06-26T10:15:30.892819+00:00 app[web.1]: Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 6.1ms)
+2016-06-26T10:15:30.738400+00:00 app[web.1]: Redirected to http://koredet.herokuapp.com/dashboard
+2016-06-26T10:15:30.741362+00:00 app[web.1]: Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+2016-06-26T10:15:30.890934+00:00 app[web.1]:   Rendered dashboard/index.html.erb within layouts/application (1.3ms)
+2016-06-26T10:15:30.727546+00:00 app[web.1]: Started GET "/" for 62.102.163.248 at 2016-06-26 10:15:30 +0000
+2016-06-26T10:15:30.892007+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.3ms)
+2016-06-26T10:15:30.874001+00:00 app[web.1]: Started GET "/dashboard" for 62.102.163.248 at 2016-06-26 10:15:30 +0000
+2016-06-26T10:15:30.876886+00:00 app[web.1]: Processing by DashboardController#index as HTML
+2016-06-26T10:15:30.894953+00:00 heroku[router]: at=info method=GET path="/dashboard" host=koredet.herokuapp.com request_id=3a4b7d29-fc95-4780-b404-7e615c3ae92b fwd="62.102.163.248" dyno=web.1 connect=0ms service=22ms status=200 bytes=3067
+2016-06-26T10:15:31.041965+00:00 heroku[router]: at=info method=GET path="/javascripts/defaults.js" host=koredet.herokuapp.com request_id=6eeffb1a-1e4a-411d-8ea7-fed7d97b31e6 fwd="62.102.163.248" dyno=web.1 connect=4ms service=7ms status=404 bytes=1531
+2016-06-26T10:15:31.035236+00:00 app[web.1]: Started GET "/javascripts/defaults.js" for 62.102.163.248 at 2016-06-26 10:15:31 +0000
+2016-06-26T10:15:31.040452+00:00 app[web.1]: 
+2016-06-26T10:15:31.040462+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+2016-06-26T10:15:31.040464+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+2016-06-26T10:15:31.040465+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:38:in `call_app'
+2016-06-26T10:15:31.040467+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:26:in `tagged'
+2016-06-26T10:15:31.040466+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+2016-06-26T10:15:31.040466+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:20:in `block in call'
+2016-06-26T10:15:31.040463+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2016-06-26T10:15:31.040469+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+2016-06-26T10:15:31.040470+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+2016-06-26T10:15:31.040471+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+2016-06-26T10:15:31.040472+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/static.rb:120:in `call'
+2016-06-26T10:15:31.040475+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/configuration.rb:224:in `call'
+2016-06-26T10:15:31.040474+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:165:in `call'
+2016-06-26T10:15:31.040476+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:569:in `handle_request'
+2016-06-26T10:15:31.040472+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+2016-06-26T10:15:31.040468+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/tagged_logging.rb:68:in `tagged'
+2016-06-26T10:15:31.040469+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/rack/logger.rb:20:in `call'
+2016-06-26T10:15:31.040473+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+2016-06-26T10:15:31.040476+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:406:in `process_client'
+2016-06-26T10:15:31.040477+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/server.rb:271:in `block in run'
+2016-06-26T10:15:31.040478+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/puma-3.4.0/lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+2016-06-26T10:15:31.040474+00:00 app[web.1]:   vendor/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:518:in `call'
+2016-06-26T10:15:31.040479+00:00 app[web.1]: 
+2016-06-26T10:15:31.040479+00:00 app[web.1]: 
+2016-06-26T10:15:34.902437+00:00 app[web.1]: Started GET "/items" for 62.102.163.248 at 2016-06-26 10:15:34 +0000
+2016-06-26T10:15:35.005697+00:00 app[web.1]:   Rendered items/index.html.erb within layouts/application (87.1ms)
+2016-06-26T10:15:35.011265+00:00 app[web.1]: ActionView::Template::Error (undefined method `item_type_name' for nil:NilClass):
+2016-06-26T10:15:35.011266+00:00 app[web.1]:     23:       <tr>
+2016-06-26T10:15:34.909547+00:00 app[web.1]: Processing by ItemsController#index as HTML
+2016-06-26T10:15:35.011268+00:00 app[web.1]:     25:         <td><%= item.item_class.item_class_name %></td>
+2016-06-26T10:15:35.006790+00:00 app[web.1]: Completed 500 Internal Server Error in 97ms (ActiveRecord: 20.5ms)
+2016-06-26T10:15:35.011267+00:00 app[web.1]:     24:         <td><%= item.id %></td> 
+2016-06-26T10:15:35.011273+00:00 app[web.1]:     26:         <td><%= item.item_type.item_type_name %></td>
+2016-06-26T10:15:35.011274+00:00 app[web.1]:     27:         <td><%= item.item_name %></td>
+2016-06-26T10:15:35.011276+00:00 app[web.1]:   app/views/items/index.html.erb:26:in `block in _app_views_items_index_html_erb__3580377962706133073_70284994789820'
+2016-06-26T10:15:35.011277+00:00 app[web.1]:   app/views/items/index.html.erb:22:in `_app_views_items_index_html_erb__3580377962706133073_70284994789820'
+2016-06-26T10:15:35.011278+00:00 app[web.1]: 
+2016-06-26T10:15:35.011256+00:00 app[web.1]: 
+2016-06-26T10:15:35.011277+00:00 app[web.1]: 
+2016-06-26T10:15:35.011274+00:00 app[web.1]:     28:         <td><%= item.has_individuals %></td>
+2016-06-26T10:15:35.011275+00:00 app[web.1]:     29:         <td><%= item.barcode %></td>
+2016-06-26T10:15:35.013143+00:00 heroku[router]: at=info method=GET path="/items" host=koredet.herokuapp.com request_id=c60047ce-e9d7-4d20-a790-8efc810137cb fwd="62.102.163.248" dyno=web.1 connect=0ms service=111ms status=500 bytes=1458
+2016-06-26T10:17:19.613136+00:00 app[web.1]: Started GET "/items" for 62.102.163.248 at 2016-06-26 10:17:19 +0000
+2016-06-26T10:17:19.633497+00:00 app[web.1]:   Rendered items/index.html.erb within layouts/application (17.7ms)
+2016-06-26T10:17:19.614779+00:00 app[web.1]: Processing by ItemsController#index as HTML
+2016-06-26T10:17:19.633665+00:00 app[web.1]: Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.9ms)
+2016-06-26T10:17:19.635023+00:00 app[web.1]: 
+2016-06-26T10:17:19.635039+00:00 app[web.1]:     23:       <tr>
+2016-06-26T10:17:19.635037+00:00 app[web.1]: ActionView::Template::Error (undefined method `item_type_name' for nil:NilClass):
+2016-06-26T10:17:19.635040+00:00 app[web.1]:     24:         <td><%= item.id %></td> 
+2016-06-26T10:17:19.635042+00:00 app[web.1]:     25:         <td><%= item.item_class.item_class_name %></td>
+2016-06-26T10:17:19.635043+00:00 app[web.1]:     26:         <td><%= item.item_type.item_type_name %></td>
+2016-06-26T10:17:19.635044+00:00 app[web.1]:     27:         <td><%= item.item_name %></td>
+2016-06-26T10:17:19.635044+00:00 app[web.1]:     28:         <td><%= item.has_individuals %></td>
+2016-06-26T10:17:19.635045+00:00 app[web.1]:     29:         <td><%= item.barcode %></td>
+2016-06-26T10:17:19.635046+00:00 app[web.1]:   app/views/items/index.html.erb:26:in `block in _app_views_items_index_html_erb__3580377962706133073_70284994789820'
+2016-06-26T10:17:19.635048+00:00 app[web.1]:   app/views/items/index.html.erb:22:in `_app_views_items_index_html_erb__3580377962706133073_70284994789820'
+2016-06-26T10:17:19.635049+00:00 app[web.1]: 
+2016-06-26T10:17:19.635049+00:00 app[web.1]: 
+2016-06-26T10:17:19.637558+00:00 heroku[router]: at=info method=GET path="/items" host=koredet.herokuapp.com request_id=c657dba9-024d-4bba-91a9-a0ecf3e2c56e fwd="62.102.163.248" dyno=web.1 connect=0ms service=23ms status=500 bytes=1458
