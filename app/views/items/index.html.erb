@@ -22,8 +22,8 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td> 
-        <td><%= item.item_class.item_class_name %></td>
-        <td><%= item.item_type.item_type_name %></td>
+        <td><%= item.item_class.item_class_name if item.item_class %></td>
+        <td><%= item.item_type.item_type_name if item.item_type %></td>
         <td><%= item.item_name %></td>
         <td><%= item.has_individuals %></td>
         <td><%= item.barcode %></td>
